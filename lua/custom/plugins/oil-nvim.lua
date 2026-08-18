@@ -182,7 +182,7 @@ return {
 
   keys = {
     {
-      '<leader>e',
+      '<leader>o',
       function()
         if oil_first then
           oil_first = false
@@ -191,7 +191,7 @@ return {
           vim.cmd 'Oil' -- later: normal behavior
         end
       end,
-      desc = 'Open parent directory',
+      desc = 'Open file explorer',
     },
   },
   dependencies = { { 'nvim-mini/mini.icons', opts = {} } },

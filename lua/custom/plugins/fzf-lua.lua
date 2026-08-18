@@ -53,6 +53,9 @@ return {
     -- grep provider uses the same “file” actions by default,
     -- but you can override / make it explicit if you want:
     opts.grep = vim.tbl_deep_extend('force', opts.grep or {}, {
+      -- Keep dependency lockfiles out of the normal project search so
+      -- relevant source files appear first.
+      file_ignore_patterns = { 'package%-lock%.json' },
       actions = {
         ['default'] = actions.file_edit_or_qf, -- 1 result = jump, many = QF
         ['alt-q'] = actions.file_sel_to_qf, -- manual “send selected to QF”

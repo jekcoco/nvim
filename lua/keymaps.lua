@@ -1,6 +1,8 @@
 require 'tmux_keybind'
 local keymap_helper = require 'keymaps_helper'
 
+vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
+
 vim.keymap.set(
   'n',
   '<leader>pr',

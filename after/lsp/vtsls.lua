@@ -1,6 +1,11 @@
 ---@type vim.lsp.Config
+local vtsls = vim.fn.stdpath('data') .. '/mason/bin/vtsls'
+
 return {
-  cmd = { 'vtsls', '--stdio' },
+  cmd = {
+    vim.fn.executable(vtsls) == 1 and vtsls or 'vtsls',
+    '--stdio',
+  },
   init_options = {
     hostInfo = 'neovim',
   },
